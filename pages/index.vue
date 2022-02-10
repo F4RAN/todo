@@ -14,7 +14,7 @@
           <draggable class="d-flex justify-content-center row text-dark" style v-model="myArray">
             <div v-for="element in myArray" :key="element">
               <div class="m-3" style="min-height:100px">
-                <Card style="min-width:100%;width:20vw"></Card>
+                <Card :element="element" style="min-width:100%;width:20vw"></Card>
               </div>
             </div>
           </draggable>
@@ -30,7 +30,7 @@ import Card from "../components/Card.vue";
 export default {
   data() {
     return {
-      myArray: ["1", "2", "3", "4" , '5' , '6' , '7', '8' ]
+      myArray: ["QoS - QoE Research and code abcdefg", "2", "3", "4" , '5' , '6' , '7', '8' ]
     };
   },
   components: {

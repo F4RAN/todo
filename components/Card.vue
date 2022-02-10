@@ -1,8 +1,10 @@
 <template>
   <div style="width:100%;position:relative">
-    <div v-if="clicked" style="position:absolute;z-index:1000;width:100%"
-    class="text-center"
-    @click="clicked = false"
+    <div
+      v-if="clicked"
+      style="position:absolute;z-index:1000;width:100%"
+      class="text-center"
+      @click="clicked = false"
     >
       <i class="fa fa-times-circle mt-2" style="color:white;cursor:pointer"></i>
     </div>
@@ -11,13 +13,24 @@
       class="d-flex justify-content-center align-items-center title-card"
       @click="clicked = true"
     >
-      <div style="text-align:center">Magic Test {{clicked}}</div>
+      <div style="text-align:center;padding:10px;color:white">{{element}}</div>
     </div>
-    <div class="card" :style="clicked ? {  'color': 'rgb(88 199 250 / 100%)' , 'transition': 'color 1s'} : '' ">Magic Card</div>
+    <div
+      class="card"
+      :style="clicked ? {  'color': 'rgb(88 199 250 / 100%)' , 'transition': 'color 1s'} : '' "
+    >Magic Card</div>
+    <div  style="background:yellow;margin-left:25%;width:50%;text-align:center;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+    margin-top:5px
+    ">
+      <div>2 Days left</div>
+    </div>
   </div>
 </template>
 <script>
 export default {
+  props: ["element"],
   data() {
     return {
       clicked: false
@@ -74,7 +87,6 @@ body {
   cursor: pointer;
   font-family: cursive;
 }
-
 
 /* .card:hover:before,
 .card:hover:after {
