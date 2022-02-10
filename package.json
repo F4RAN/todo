@@ -16,6 +16,7 @@
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
+    "vue-ultimate-skeleton-cards": "^1.0.3",
     "vuedraggable": "^2.24.3",
     "webpack": "^4.46.0"
   },

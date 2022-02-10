@@ -8,28 +8,34 @@
       <option value="dark">Dark</option>
       <option value="sepia">Sepia</option>
     </select>
-    <div>
-      <div class="d-flex justify-content-around">
-        <draggable class="row text-dark" style v-model="myArray">
-          <div v-for="element in myArray" :key="element">
-            <div class="bg-success col-3 p-5 m-2">{{element}}</div>
-          </div>
-        </draggable>
+    <div class="d-flex justify-content-center">
+      <div class="container d-flex ">
+        <client-only>
+          <draggable class="d-flex justify-content-center row text-dark" style v-model="myArray">
+            <div v-for="element in myArray" :key="element">
+              <div class="m-3" style="min-height:100px">
+                <Card style="min-width:100%;width:20vw"></Card>
+              </div>
+            </div>
+          </draggable>
+        </client-only>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Sidebar from '../components/Sidebar.vue'
+import Sidebar from "../components/Sidebar.vue";
+import Card from "../components/Card.vue";
 export default {
   data() {
     return {
-      myArray: ["1", "2", "3", "4"]
+      myArray: ["1", "2", "3", "4" , '5' , '6' , '7', '8' ]
     };
   },
-  components:{
-    Sidebar:Sidebar
+  components: {
+    Card,
+    Sidebar
   }
 };
 </script>
